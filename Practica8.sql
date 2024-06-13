@@ -23,10 +23,4 @@ JOIN Comics C ON A.id_autor = C.id_autor;
 SELECT * FROM Vista_AutoresComics;
 
 
-CREATE VIEW Vista_ComprasClienteAutores AS
-SELECT C.id_compra, Cl.id_cliente, Cl.nombre AS nombre_cliente, Cl.correo_electronico AS correo_cliente, A.id_autor, A.nombre AS nombre_autor, Co.id_comic, Co.nombre AS nombre_comic, Co.anio, Co.precio, CC.cantidad AS total_cantidad, CC.cantidad * Co.precio AS subtotal
-FROM  Compras C
-JOIN  Clientes Cl ON C.id_cliente = Cl.id_cliente
-JOIN  Comic_Compras CC ON C.id_compra = CC.id_compra
-JOIN  Comics Co ON CC.id_comic = Co.id_comic
-JOIN  Autores A ON Co.id_autor = A.id_autor;
+

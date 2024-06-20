@@ -102,3 +102,22 @@ PRINT('otra consulta')
 PRINT('yo tambien')
 
 
+--  CASE
+
+
+DECLARE @valor INT
+DECLARE @resultado CHAR (10)=''
+SET @valor= 20
+
+SET @resultado= (CASE WHEN @valor=10 THEN 'rojo'
+                      WHEN @valor= 20 THEN 'morado'
+                      WHEN @valor= 30 THEN  'dorado'
+                      ELSE 'plateado'
+                      END)
+PRINT @resultado
+
+
+SELECT * ,(CASE WHEN disponibilidad= 1 THEN 'VERDE'
+                WHEN disponibilidad= 0 THEN 'ROJO'
+                ELSE 'NEGRO' END) AS INDICADOR
+                FROM Inventario
